@@ -318,7 +318,9 @@ internal class GDPerformanceView: UIWindow {
     class func windowFrame() -> CGRect {
         var frame = CGRect.zero
         if let window = UIApplication.shared.delegate?.window {
-            frame = CGRect(x: 0.0, y: 0.0, width: window!.bounds.width, height: 20.0)
+            let height = window!.bounds.height
+            let y: CGFloat = (height == 812.0) ? 30.0 : 0.0
+            frame = CGRect(x: 0.0, y: y, width: window!.bounds.width, height: 20.0)
         }
         return frame
     }
